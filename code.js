@@ -1,37 +1,39 @@
-
-
-
 $(document).ready(function () {
 
-    $("#x").submit(x);
 
-    var x = document.getElementById("x").value;
 
-    switch (x)
-    {
-        case "Monday":
-            $("#output").text("Begin the week");
-            break;
-        case "Tuesday":
-            $("#output").text("The second day");
-            break;
-        case "Wednesday":
-            $("#output").text("Mid-week day");
-            break;
-        case "Thursday":
-            $("#output").text("Yes Thursday");
-            break;
-        case "Friday":
-            $("#output").text("TGIF");
-            break;
-        case "Saturday":
-            $("#output").text("Weekend part one ");
-            break;
-        case "Sunday":
-            $("#output").text("Sunday before Monday");
-            break;
-        default:
-            $("#output").text("nothing");
-    }
+        $("#submitWeek").submit(function (event) {
+         event.preventDefault();
 
-});
+            var caseTest = $("input[type='radio']:checked").val();
+
+            switch (caseTest) {
+                case "monday":
+                    $("#output").text("Begin the week");
+                    break;
+                case "tuesday":
+                    $("#output").text("The second day");
+                    break;
+                case "wednesday":
+                    $("#output").text("Mid-week day");
+                    break;
+                case "thursday":
+                    $("#output").text("Yes Thursday");
+                    break;
+                case "friday":
+                    $("#output").text("TGIF");
+                    break;
+                case "saturday":
+                    $("#output").text("Weekend part one ");
+                    break;
+                case "sunday":
+                    $("#output").text("Sunday before Monday");
+                    break;
+                default:
+                    $("#output").text("nothing");
+            }
+        });
+
+    });
+
+
